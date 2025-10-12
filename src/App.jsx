@@ -6,19 +6,30 @@ import Header from './components/header/header'
 import PopularCategory from './components/main/Popular Category'
 import NewestJobs from './components/main/Newest Jobs'
 import StepstoYour from './components/main/Steps to Your'
+import TopCompanies from './components/main/Top companies'
+import OurAchievements from './components/main/Our Achievements'
+import OurBlog from './components/main/Our Blog'
+import Baner from './components/main/baner'
+import Footer from './components/footer/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  var Note ={
+    name : 'Amir Mohammad'
+  }
   return (
     <>
-      <Header/>
+      <Header name={Note.name}/>
       <main>
         <PopularCategory></PopularCategory>
         <NewestJobs></NewestJobs>
         <StepstoYour></StepstoYour>
-
+        <TopCompanies></TopCompanies>
+        <OurAchievements></OurAchievements>
+        <OurBlog></OurBlog>
+        <Baner></Baner>
       </main>
+      <Footer></Footer>
     </>
   )
 }
