@@ -1,48 +1,22 @@
 import React from "react";
+import { useState } from 'react';
 import PopularCategoryCard from "./Popular Category Card";
 
 
+const initialCategories = [
+    { id: 1, title: 'Wordpress Developer', jobs: 72, icon: "/images/Popular Category/wordpress.png" },
+    { id: 2, title: 'Software Developer', jobs: 121, icon: "/images/Popular Category/Laptop.png" },
+    { id: 3, title: 'Software Tester', jobs: 63, icon: "/images/Popular Category/user.png" },
+    { id: 4, title: 'Graphic Designer', jobs: 58, icon: "/images/Popular Category/pen.png" },
+    { id: 5, title: 'Team Leader', jobs: 35, icon: "/images/Popular Category/users-group.png" },
+    { id: 6, title: 'UX Designer', jobs: 96, icon: "/images/Popular Category/search.png" },
+    { id: 7, title: 'Project Manager', jobs: 78, icon: "/images/Popular Category/brush.png" },
+    { id: 8, title: 'UI Designer', jobs: 64, icon: "/images/Popular Category/edit.png" },
+];
+
 export default function PopularCategory() {
-    var product_1={
-        titel : 'Wordpress Developer',
-        description : '72 + Job avalibale',
-        pic_url : '../src/images/Popular Category/wordpress.png'
-    }
-    var product_2={
-        titel : 'Software Developer',
-        description : '121 + Job avalibale',
-        pic_url : '../src/images/Popular Category/Laptop.png'
-    }
-    var product_3={
-        titel : 'Software Tester',
-        description : '104 + Job avalibale',
-        pic_url : '../src/images/Popular Category/user.png'
-    }
-    var product_4={
-        titel : 'Graphic Designer',
-        description : '58 + Job avalibale',
-        pic_url : '../src/images/Popular Category/pen.png'
-    }
-    var product_5={
-        titel : 'Team Leader',
-        description : '35 + Job avalibale',
-        pic_url : '../src/images/Popular Category/users-group.png'
-    }
-    var product_6={
-        titel : 'UX Designer',
-        description : '96 + Job avalibale',
-        pic_url : '../src/images/Popular Category/search.png'
-    }
-    var product_7={
-        titel : 'Project Manager',
-        description : '78 + Job avalibale',
-        pic_url : '../src/images/Popular Category/brush.png'
-    }
-    var product_8={
-        titel : 'UI Designer',
-        description : '64 + Job avalibale',
-        pic_url : '../src/images/Popular Category/edit.png'
-    }
+
+    const [categories, setCategories] = useState(initialCategories);
 
     return (
         <>
@@ -53,24 +27,14 @@ export default function PopularCategory() {
                 <div className="grid grid-cols-1 auto-cols-auto gap-4       
             sm:grid-cols-2    md:   lg:grid-cols-3    xl:  2xl:grid-cols-4   min-xl:px-26">
 
-                    {/* product_1 */}
-                    <PopularCategoryCard titel={product_1.titel} description={product_1.description} pic_url={product_1.pic_url}/>
-                    {/* product_2 */}
-                    <PopularCategoryCard titel={product_2.titel} description={product_2.description} pic_url={product_2.pic_url}/>
-                    {/* product_3 */}
-                    <PopularCategoryCard titel={product_3.titel} description={product_3.description} pic_url={product_3.pic_url}/>
-                    {/* product_4 */}
-                    <PopularCategoryCard titel={product_4.titel} description={product_4.description} pic_url={product_4.pic_url}/>
-                    {/* product_5 */}
-                    <PopularCategoryCard titel={product_5.titel} description={product_5.description} pic_url={product_5.pic_url}/>
-                    {/* product_6 */}
-                    <PopularCategoryCard titel={product_6.titel} description={product_6.description} pic_url={product_6.pic_url}/>
-                    {/* product_7 */}
-                    <PopularCategoryCard titel={product_7.titel} description={product_7.description} pic_url={product_7.pic_url}/>
-                    {/* product_8 */}
-                    <PopularCategoryCard titel={product_8.titel} description={product_8.description} pic_url={product_8.pic_url}/>
+                    {categories.map((cat) => (
+                        <PopularCategoryCard key={cat.id} titel={cat.title} description={cat.jobs+" Job available"} pic_url={cat.icon} />
+                    ))}
+
                 </div>
             </section>
         </>
     )
 }
+
+

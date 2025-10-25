@@ -8,7 +8,7 @@ export default function Header({name}) {
                 {/* <!-- header_top --> */}
                 <section
                     className="container flex items-center justify-between border border-neutral-400 rounded-lg bg-white relative z-50 mt-0">
-                    <img src="../src/images/Logo_joblin.svg" alt="logo-joblin" />
+                    <img src="/images/Logo_joblin.svg" alt="logo-joblin" />
                     <nav className="flex gap-10">
                         <a href="#" className="text-blue-600 transition-colors duration-150">{name}</a>
                         <a href="#" className="hover:text-blue-600 transition-colors duration-150">Find job</a>
@@ -85,13 +85,13 @@ export default function Header({name}) {
                             </button>
                         </div>
                         <div className="flex">
-                            <img src="../src/images/people.png" alt="" />
+                            <img src="/images/people.png" alt="" />
                             <p>Over <span className="text-blue-600">999+</span> jobseeker are successfully hired</p>
                         </div>
                     </div>
                     {/* <!-- header_content-right --> */}
                     <div>
-                        <img className="w-2xl relative -right-28 -top-5" src="../src/images/header-women.svg" alt="" />
+                        <img className="w-2xl relative -right-28 -top-5" src="/images/header-women.svg" alt="" />
                     </div>
                 </section>
             </header>

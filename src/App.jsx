@@ -24,8 +24,8 @@ function App() {
       <Header name={Note.name}/>
       <main>
         <PopularCategory/>
-        <NewestJobs></NewestJobs>
-        <StepstoYour></StepstoYour>
+        <NewestJobs/>
+        <StepstoYour/>
         <TopCompanies></TopCompanies>
         <OurAchievements></OurAchievements>
         <OurBlog></OurBlog>

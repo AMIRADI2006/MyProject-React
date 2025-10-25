@@ -7,7 +7,7 @@ export default function Footer() {
             <footer className="mt-[88px] border-t border-neutral-300 rounded-lg">
                 <div className="container flex justify-between py-10 mt-0  xl:px-26">
                     <div className="w-[350px] space-y-2">
-                        <img src="../src/images/Logo_joblin.svg" alt="" />
+                        <img src="/images/Logo_joblin.svg" alt="" />
                         <p className="text-sm text-neutral-700">Joblin is a smart job search and recruitment platform that connects
                             job seekers with employers. With fast search, professional resume building, and intelligent
                             matching, Jablin makes hiring and job hunting easy and efficient.</p>
@@ -30,11 +30,11 @@ export default function Footer() {
                     <div>
                         <h6 className="text-lg font-medium">Contact Us</h6>
                         <div className="flex gap-4 my-6">
-                            <img className="p-1.5 bg-neutral-100 rounded-lg" src="../src/images/footer/insta.svg" alt="" />
-                            <img className="p-1.5 bg-neutral-100 rounded-lg" src="../src/images/footer/facebook.svg" alt="" />
-                            <img className="p-1.5 bg-neutral-100 rounded-lg" src="../src/images/footer/whatsapp.svg" alt="" />
-                            <img className="p-1.5 bg-neutral-100 rounded-lg" src="../src/images/footer/linkedin.svg" alt="" />
-                            <img className="p-1.5 bg-neutral-100 rounded-lg" src="../src/images/footer/X.svg" alt="" />
+                            <img className="p-1.5 bg-neutral-100 rounded-lg" src="/images/footer/insta.svg" alt="" />
+                            <img className="p-1.5 bg-neutral-100 rounded-lg" src="/images/footer/facebook.svg" alt="" />
+                            <img className="p-1.5 bg-neutral-100 rounded-lg" src="/images/footer/whatsapp.svg" alt="" />
+                            <img className="p-1.5 bg-neutral-100 rounded-lg" src="/images/footer/linkedin.svg" alt="" />
+                            <img className="p-1.5 bg-neutral-100 rounded-lg" src="/images/footer/X.svg" alt="" />
                         </div>
                         <div className="space-y-3">
                             <div className="flex items-center gap-1 text-neutral-700 text-sm">
@@ -61,27 +61,27 @@ export default function Footer() {
                 <div className="container h-16 bg-neutral-200 xl:px-26 mt-0 flex justify-between items-center">
                     <div className="flex gap-1 text-xs">
                         <span className="hover:text-blue-700 transition-colors cursor-pointer ">AmirMohammad MohammadAbadi</span>
-                        <img src="../src/images/footer/footer_bottom/C.svg" alt="" />
+                        <img src="/images/footer/footer_bottom/C.svg" alt="" />
                         <span>2025</span>
                     </div>
                     <div className="flex gap-2">
                         <div className="flex items-center justify-center w-11 h-7 bg-white rounded-sm">
-                            <img src="../src/images/footer/footer_bottom/visa-logo.svg" alt="" />
+                            <img src="/images/footer/footer_bottom/visa-logo.svg" alt="" />
                         </div>
                         <div className="flex items-center justify-center w-11 h-7 bg-white rounded-sm">
-                            <img src="../src/images/footer/footer_bottom/Stripe.svg" alt="" />
+                            <img src="/images/footer/footer_bottom/Stripe.svg" alt="" />
                         </div>
                         <div className="flex items-center justify-center w-11 h-7 bg-white rounded-sm">
-                            <img src="../src/images/footer/footer_bottom/PayPal.svg" alt="" />
+                            <img src="/images/footer/footer_bottom/PayPal.svg" alt="" />
                         </div>
                         <div className="flex items-center justify-center w-11 h-7 bg-white rounded-sm">
-                            <img src="../src/images/footer/footer_bottom/GooglePay.svg" alt="" />
+                            <img src="/images/footer/footer_bottom/GooglePay.svg" alt="" />
                         </div>
                         <div className="flex items-center justify-center w-11 h-7 bg-white rounded-sm">
-                            <img src="../src/images/footer/footer_bottom/DinersClub.svg" alt="" />
+                            <img src="/images/footer/footer_bottom/DinersClub.svg" alt="" />
                         </div>
                         <div className="flex items-center justify-center w-11 h-7 bg-white rounded-sm">
-                            <img src="../src/images/footer/footer_bottom/ApplePay.svg" alt="" />
+                            <img src="/images/footer/footer_bottom/ApplePay.svg" alt="" />
                         </div>
                     </div>
                 </div>
