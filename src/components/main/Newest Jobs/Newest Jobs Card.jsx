@@ -1,4 +1,4 @@
-export default function NewestJobsCard({ job , location , price }) {
+export default function NewestJobsCard({ job }) {
     return (
         <>
             <div className="flex gap-4 text-left border border-neutral-200 rounded-lg p-4 cursor-pointer">

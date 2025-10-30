@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PopularCategoryCard from "./Popular Category Card";
 
 
@@ -18,6 +18,12 @@ export default function PopularCategory() {
 
     const [categories, setCategories] = useState(initialCategories);
 
+    useEffect(() => {
+        const newCategory = { id: 9, title: 'Wordpress Developer', jobs: 72, icon: "/images/Popular Category/wordpress.png" }
+
+        setCategories(prev => [...prev, newCategory]);
+    }, []);
+
     return (
         <>
             {/* <!-- Popular Category --> */}
@@ -28,7 +34,7 @@ export default function PopularCategory() {
             sm:grid-cols-2    md:   lg:grid-cols-3    xl:  2xl:grid-cols-4   min-xl:px-26">
 
                     {categories.map((cat) => (
-                        <PopularCategoryCard key={cat.id} titel={cat.title} description={cat.jobs+" Job available"} pic_url={cat.icon} />
+                        <PopularCategoryCard key={cat.id} cat={cat} />
                     ))}
 
                 </div>
