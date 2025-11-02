@@ -20,7 +20,7 @@ export default function TopCompanies() {
                 <div className="grid grid-cols-1 auto-cols-auto gap-4
             sm:    md:grid-cols-2   lg:    xl:  2xl:grid-cols-3">
                     <div className="flex   text-left p-4 border border-neutral-200 rounded-lg space-x-2">
-                        <img className="w-16 h-16 rounded-xl" src="../src/images/Top companies/img_1.png" alt="" />
+                        <img className="w-16 h-16 rounded-xl" src="/images/Top companies/img_1.png" alt="" />
                         <div className="space-y-2">
                             <div className="flex justify-between">
                                 <h5 className="text-xl font-medium">Bergen</h5><span>4.5</span>
@@ -38,7 +38,7 @@ export default function TopCompanies() {
                         </div>
                     </div>
                     <div className="flex   text-left p-4 border border-neutral-200 rounded-lg space-x-2">
-                        <img className="w-16 h-16 rounded-xl" src="../src/images/Top companies/img_2.png" alt="" />
+                        <img className="w-16 h-16 rounded-xl" src="/images/Top companies/img_2.png" alt="" />
                         <div className="space-y-2">
                             <div className="flex justify-between">
                                 <h5 className="text-xl font-medium">Bergen</h5><span>4.5</span>
@@ -56,7 +56,7 @@ export default function TopCompanies() {
                         </div>
                     </div>
                     <div className="flex   text-left p-4 border border-neutral-200 rounded-lg space-x-2">
-                        <img className="w-16 h-16 rounded-xl" src="../src/images/Top companies/img_3.png" alt="" />
+                        <img className="w-16 h-16 rounded-xl" src="/images/Top companies/img_3.png" alt="" />
                         <div className="space-y-2">
                             <div className="flex justify-between">
                                 <h5 className="text-xl font-medium">Bergen</h5><span>4.5</span>

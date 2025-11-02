@@ -19,7 +19,7 @@ export default function OurBlog(){
             <div className="grid justify-items-center gap-4 
             sm:     md:     lg:grid-cols-2     xl:    2xl:grid-cols-3  ">
                 <div className="w-[400px] border rounded-lg border-neutral-100 shadow">
-                    <img src="../src/images/Our Blog Your Path to Career Success/img_1.png" alt=""/>
+                    <img src="/images/Our Blog Your Path to Career Success/img_1.png" alt=""/>
                     <div className="p-4 space-y-3 text-left">
                         <div className="text-xs text-neutral-500 space-x-2">
                             <a className="py-0.5 px-2 border border-neutral-500 rounded-sm" href="#">Job Market</a>
@@ -39,7 +39,7 @@ export default function OurBlog(){
                     </div>
                 </div>
                 <div className="w-[400px] text-left border rounded-lg border-neutral-100 shadow">
-                    <img src="../src/images/Our Blog Your Path to Career Success/img_2.png" alt=""/>
+                    <img src="/images/Our Blog Your Path to Career Success/img_2.png" alt=""/>
                     <div className="p-4 space-y-3">
                         <div className="text-xs text-neutral-500 space-x-2">
                             <a className="py-0.5 px-2 border border-neutral-500 rounded-sm" href="#">Job Market</a>
@@ -59,7 +59,7 @@ export default function OurBlog(){
                     </div>
                 </div>
                 <div className="w-[400px] text-left border rounded-lg border-neutral-100 shadow">
-                    <img src="../src/images/Our Blog Your Path to Career Success/img_3.png" alt=""/>
+                    <img src="/images/Our Blog Your Path to Career Success/img_3.png" alt=""/>
                     <div className="p-4 space-y-3">
                         <div className="text-xs text-neutral-500 space-x-2">
                             <a className="py-0.5 px-2 border border-neutral-500 rounded-sm" href="#">Job Market</a>

@@ -6,10 +6,10 @@ export default function Baner() {
         <>
             {/* <!-- baner --> */}
             <section className="w-[99.9%] h-[511px] bg-blue-50 mt-[88px] relative -z-20">
-                <img className="absolute" src="../src/images/vector/Vector_1.svg" alt="" />
-                <img className="absolute bottom-0 right-5 -z-10" src="../src/images/vector/Vector_2.svg" alt="" />
-                <img className="absolute bottom-20 right-[13%] -z-10" src="../src/images/vector/Vector_3.svg" alt="" />
-                <img className="absolute bottom-0 right-[5%] -z-10" src="../src/images/vector/Vector_4.svg" alt="" />
+                <img className="absolute" src="/images/vector/Vector_1.svg" alt="" />
+                <img className="absolute bottom-0 right-5 -z-10" src="/images/vector/Vector_2.svg" alt="" />
+                <img className="absolute bottom-20 right-[13%] -z-10" src="/images/vector/Vector_3.svg" alt="" />
+                <img className="absolute bottom-0 right-[5%] -z-10" src="/images/vector/Vector_4.svg" alt="" />
 
                 <div className="grid grid-cols-2">
                     <div className="mt-[131px] ml-[184px] space-y-6">
@@ -18,7 +18,7 @@ export default function Baner() {
                             we are committed to maintaining the quality of user service</p>
                         <button className="w-72 h-14 bg-blue-600 text-white text-xl rounded-lg ">Post a job</button>
                     </div>
-                    <img className="" src="../src/images/main-man.svg" alt="" />
+                    <img className="" src="/images/main-man.svg" alt="" />
                 </div>
             </section>
         </>
