@@ -31,7 +31,7 @@ export default function PopularCategory() {
                 <h3 className="text-4xl font-bold">Popular Category</h3>
                 <p className="mt-3 mb-8 text-neutral-500">The last job offers Upload</p>
                 <div className="grid grid-cols-1 auto-cols-auto gap-4       
-            sm:grid-cols-2    md:   lg:grid-cols-3    xl:  2xl:grid-cols-4   min-xl:px-26">
+            sm:grid-cols-2    md:   lg:grid-cols-3    xl:  2xl:grid-3cols-4   min-xl:px-26">
 
                     {categories.map((cat) => (
                         <PopularCategoryCard key={cat.id} cat={cat} />
