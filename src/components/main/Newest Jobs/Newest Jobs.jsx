@@ -3,8 +3,6 @@ import { useState } from 'react';
 import axios from 'axios';
 import NewestJobsCard from "./Newest Jobs Card";
 
-
-// const initialJobs = [
 //     {
 //         id: 1,
 //         company: 'MIM',
