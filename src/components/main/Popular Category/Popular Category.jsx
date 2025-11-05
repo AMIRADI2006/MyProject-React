@@ -1,28 +1,33 @@
 import React from "react";
 import { useState, useEffect } from 'react';
+import axios from "axios";
 import PopularCategoryCard from "./Popular Category Card";
 
 
-const initialCategories = [
-    { id: 1, title: 'Wordpress Developer', jobs: 72, icon: "/images/Popular Category/wordpress.png" },
-    { id: 2, title: 'Software Developer', jobs: 121, icon: "/images/Popular Category/Laptop.png" },
-    { id: 3, title: 'Software Tester', jobs: 63, icon: "/images/Popular Category/user.png" },
-    { id: 4, title: 'Graphic Designer', jobs: 58, icon: "/images/Popular Category/pen.png" },
-    { id: 5, title: 'Team Leader', jobs: 35, icon: "/images/Popular Category/users-group.png" },
-    { id: 6, title: 'UX Designer', jobs: 96, icon: "/images/Popular Category/search.png" },
-    { id: 7, title: 'Project Manager', jobs: 78, icon: "/images/Popular Category/brush.png" },
-    { id: 8, title: 'UI Designer', jobs: 64, icon: "/images/Popular Category/edit.png" },
-];
-
 export default function PopularCategory() {
 
-    const [categories, setCategories] = useState(initialCategories);
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        const newCategory = { id: 9, title: 'Wordpress Developer', jobs: 72, icon: "/images/Popular Category/wordpress.png" }
-
-        setCategories(prev => [...prev, newCategory]);
+        async function fetchData() {
+            try {
+                const { data } = await axios.get("http://127.0.0.1:8000/api/v1/category");
+                console.log(data);
+                const allData = data.data.map((cat) => ({
+                    id: cat.id,
+                    title: cat.title,
+                    jobs: cat.jobs,
+                    icon: cat.icon,
+                }));
+                setCategories(allData);
+            }
+            catch (error) {
+                console.log('خوردی به ارور خوشکل', error.message);
+            }
+        }
+        fetchData();
     }, []);
+
 
     return (
         <>
@@ -42,5 +47,3 @@ export default function PopularCategory() {
         </>
     )
 }
-
-
