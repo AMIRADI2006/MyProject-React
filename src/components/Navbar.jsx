@@ -1,12 +1,8 @@
-import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 
 
 export default function Navbar() {
 
-     const navigate = useNavigate();
-
-    const goToCompany = () => { navigate('/Company') }; // مسیر صفحه مقصد};
     
     return (
         <>
