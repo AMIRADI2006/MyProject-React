@@ -1,7 +1,8 @@
-import React from "react";
+import Navbar from '../Navbar';
 
 
-export default function Header({name}) {
+export default function Header() {
+
     return (
         <>
             <header className="bg-[#EFF5FF] h-screen pt-12 px-26">
@@ -9,12 +10,7 @@ export default function Header({name}) {
                 <section
                     className="container flex items-center justify-between border border-neutral-400 rounded-lg bg-white relative z-50 mt-0">
                     <img src="/images/Logo_joblin.svg" alt="logo-joblin" />
-                    <nav className="flex gap-10">
-                        <a href="#" className="text-blue-600 transition-colors duration-150">{name}</a>
-                        <a href="#" className="hover:text-blue-600 transition-colors duration-150">Find job</a>
-                        <a href="#" className="hover:text-blue-600 transition-colors duration-150">Company</a>
-                        <a href="#" className="hover:text-blue-600 transition-colors duration-150">Create CV</a>
-                    </nav>
+                    <Navbar/>
                     <div className="flex items-center gap-5">
                         <div className="flex gap-7">
                             <svg className="size-6 cursor-pointer hover:text-blue-500 transition-colors"
