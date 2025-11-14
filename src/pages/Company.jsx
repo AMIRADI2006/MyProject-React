@@ -1,8 +1,16 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer'
+import NewestJobs from "../components/main/Newest Jobs/Newest Jobs";
+import JobsBMW from "../components/Company/Jobs from BMW";
 
 export default function Company() {
+
+    const [plas, setPlas] = useState(5);
+    const [ofplas, setOfplas] = useState(false); // Plas وضعیت دکمه
+
+    const [mines, setMines] = useState(0);
+    const [ofmines, setOfmines] = useState(false); // Mines وضعیت دکمه
 
     const infoRef = useRef(null);
     const peopleRef = useRef(null);
@@ -66,13 +74,13 @@ export default function Company() {
                                     <span>BMW.com</span>
                                 </div>
                                 <div className='flex gap-2 items-start'>
-                                    <button className='h-8 bg-blue-600 text-white px-4 rounded-lg text-sm'>Follow</button>
+                                    <button className='h-8 bg-blue-600 hover:bg-blue-500 text-white px-4 rounded-lg text-sm cursor-pointer'>Follow</button>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                        className=" hover:text-blue-500 transition-colors mt-[3px] size-6">
+                                        className=" hover:text-blue-500 transition-colors mt-[3px] size-6 cursor-pointer">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
                                     </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
-                                    className=" hover:text-blue-500 transition-colors mt-[5px] size-5" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                        className=" hover:text-blue-500 transition-colors mt-[5px] size-5 cursor-pointer" >
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
                                     </svg>
                                 </div>
@@ -103,127 +111,130 @@ export default function Company() {
                 </section>
             </header>
             <main>
-                {/* Company Informations */}
-                {/* <section className='px-26'>
-                    <div className='container'>
-                        <div className="flex flex-wrap gap-4 mb-6">
-                            {[
-                                { label: "About Company", ref: aboutRef },
-                                { label: "People at BMW", ref: peopleRef },
-                                { label: "Overview", ref: overviewRef },
-                                { label: "Jobs From BMW", ref: jobsRef },
-                            ].map((item) => (
-                                <button
-                                    key={item.label}
-                                    onClick={() => scrollToSection(item.ref)}
-                                    className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
-                                >
-                                    {item.label}
-                                </button>
-                            ))}
-                        </div>
+                {/*  Navigation Buttons */}
+                <div className="flex flex-wrap mb-8 mt-12 text-xl border-b-[1px] border-b-neutral-300 mx-26">
+                    <button onClick={() => scrollTo(infoRef)} className="px-6 py-2 hover:text-blue-500 transition hover:border-b-[1px] cursor-pointer">
+                        About Company
+                    </button>
+                    <button onClick={() => scrollTo(peopleRef)} className="px-6 py-2 hover:text-blue-500 transition hover:border-b-[1px] cursor-pointer">
+                        People at BMW
+                    </button>
+                    <button onClick={() => scrollTo(overviewRef)} className="px-6 py-2 hover:text-blue-500 transition hover:border-b-[1px] cursor-pointer">
+                        Overview
+                    </button>
+                    <button onClick={() => scrollTo(jobsRef)} className="px-6 py-2 hover:text-blue-500 transition hover:border-b-[1px] cursor-pointer">
+                        Jobs From BMW
+                    </button>
+                </div>
 
+                {/*  Company Informations */}
+                <section ref={infoRef} className="mb-16 px-26">
+                    <h2 className="text-[28px] font-bold mb-4">Company Informations</h2>
+                    <p className="text-gray-700 leading-relaxed mb-6">
+                        BMW is synonymous with engineering excellence, consistently setting the standard for precision, performance, and technological innovation across its entire range of vehicles. Driven by a customer-centric approach, the brand seamlessly integrates dynamic handling, powerful engine performance, and sophisticated design to deliver a truly premium and exhilarating driving experience. Beyond performance, BMW is deeply committed to sustainability, focusing on the development of electric mobility solutions, eco-friendly manufacturing processes, and reducing its overall environmental footprint. This commitment to a greener future is reflected in the company’s continued efforts to lead the automotive industry into a smarter, more sustainable era. Rooted in a rich heritage of German craftsmanship, BMW remains dedicated to delivering timeless style, engineering mastery, and a driving experience that continuously redefines what it means to be a leader in luxury automobiles.
+                    </p>
+                    <img src="/images/Pages/Company/company-meeting.png" alt="BMW team meeting" className="w-full rounded shadow" />
+                </section>
+
+                {/*  People at BMW */}
+                <section ref={peopleRef} className="mb-16 px-26 ">
+                    <h2 className="text-[28px] font-bold mb-4">People at BMW</h2>
+                    <div className="grid grid-cols-1 gap-6 mt-[72px] transition-all
+                    sm:grid-cols-2    md:   lg:grid-cols-3    xl:grid-cols-4   2xl:grid-cols-5   max-2xl:gap-y-12">
+                        {[
+                            { name: "Cameron Williamson", role: "Product Designer", pic: "/images/Pages/Company/People/1.png" },
+                            { name: "Cody Fisher", role: "UI Designer", pic: "/images/Pages/Company/People/2.png" },
+                            { name: "Brooklyn Simmons", role: "Frontend Developer", pic: "/images/Pages/Company/People/3.png" },
+                            { name: "Kristin Watson", role: "Backend Developer", pic: "/images/Pages/Company/People/4.png" },
+                            { name: "Darrell Steward", role: "UX Designer", pic: "/images/Pages/Company/People/5.png" },
+                        ].map((person, index) => (
+                            <div key={index} className="flex flex-col items-center bg-white p-4 rounded-lg text-center border border-neutral-200 cursor-pointer 
+                            hover:shadow shadow-blue-500">
+                                <img src={person.pic} className="w-20 h-20 mx-auto mb-2 bg-gray-200 rounded-full -mt-14" />
+                                <h3 className="font-semibold">{person.name}</h3>
+                                <p className="text-sm text-gray-500">{person.role}</p>
+                                <div className="flex items-center gap-4 mt-4">
+                                    <img className="size-6" src="/images/Pages/Company/People/in.png" alt="in" />
+                                    <img className="size-6" src="/images/Pages/Company/People/bal.png" alt="in" />
+                                    <img className="size-6" src="/images/Pages/Company/People/insta.png" alt="in" />
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                </section> */}
+                </section>
 
-                <div className="px-26 mx-auto">
-                    {/* 🔹 Navigation Buttons */}
-                    <div className="flex flex-wrap gap-4 mb-8 justify-center">
-                        <button onClick={() => scrollTo(infoRef)} className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-                            About Company
-                        </button>
-                        <button onClick={() => scrollTo(peopleRef)} className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-                            People at BMW
-                        </button>
-                        <button onClick={() => scrollTo(overviewRef)} className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-                            Overview
-                        </button>
-                        <button onClick={() => scrollTo(jobsRef)} className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-                            Jobs From BMW
-                        </button>
-                    </div>
-
-                    {/* 🔹 Company Informations */}
-                    <section ref={infoRef} className="mb-16">
-                        <h2 className="text-2xl font-bold mb-4">Company Informations</h2>
-                        <p className="text-gray-700 leading-relaxed mb-6">
-                            BMW is synonymous with engineering excellence, consistently setting the standard for precision, performance, and technological innovation across its entire range of vehicles. Driven by a customer-centric approach, the brand seamlessly integrates dynamic handling, powerful engine performance, and sophisticated design to deliver a truly premium and exhilarating driving experience. Beyond performance, BMW is deeply committed to sustainability, focusing on the development of electric mobility solutions, eco-friendly manufacturing processes, and reducing its overall environmental footprint. This commitment to a greener future is reflected in the company’s continued efforts to lead the automotive industry into a smarter, more sustainable era. Rooted in a rich heritage of German craftsmanship, BMW remains dedicated to delivering timeless style, engineering mastery, and a driving experience that continuously redefines what it means to be a leader in luxury automobiles.
-                        </p>
-                        <img src="/images/Pages/Company/company-meeting.png" alt="BMW team meeting" className="w-full rounded shadow" />
-                    </section>
-
-                    {/* 🔹 People at BMW */}
-                    <section ref={peopleRef} className="mb-16">
-                        <h2 className="text-2xl font-bold mb-4">People at BMW</h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                            {[
-                                { name: "Cameron Williamson", role: "Product Designer", pic: "/images/Pages/Company/People/1.png" },
-                                { name: "Cody Fisher", role: "UI Designer", pic: "/images/Pages/Company/People/2.png" },
-                                { name: "Brooklyn Simmons", role: "Frontend Developer", pic: "/images/Pages/Company/People/3.png" },
-                                { name: "Kristin Watson", role: "Backend Developer", pic: "/images/Pages/Company/People/4.png" },
-                                { name: "Darrell Steward", role: "UX Designer", pic: "/images/Pages/Company/People/5.png" },
-                            ].map((person, index) => (
-                                <div key={index} className="flex flex-col items-center bg-white p-4 rounded shadow text-center">
-                                    <img src={person.pic} className="w-20 h-20 mx-auto mb-2 bg-gray-200 rounded-full" />
-                                    <h3 className="font-semibold">{person.name}</h3>
-                                    <p className="text-sm text-gray-500">{person.role}</p>
-                                    <div className="flex items-center gap-4 mt-4">
-                                        <img className="size-6" src="/images/Pages/Company/People/in.png" alt="in" />
-                                        <img className="size-6" src="/images/Pages/Company/People/bal.png" alt="in" />
-                                        <img className="size-6" src="/images/Pages/Company/People/insta.png" alt="in" />
+                {/*  Overview */}
+                <section ref={overviewRef} className="mb-16 px-26">
+                    <h2 className="text-[28px] font-bold mb-4">Overview</h2>
+                    <div className="grid grid-cols-1   gap-6
+                    sm:    md:   lg:grid-cols-2    xl:   2xl:grid-cols-3">
+                        {[
+                            {
+                                name: "Leslie Alexander",
+                                comment: "When I sent in my application to Sandro, I was simply hoping for a chance. What I got was a masterclass in how to run a thoughtful, respectful, and inspiring hiring process. From the way they asked questions to the way they listened—every detail reflected.",
+                                pic: "/images/Pages/Company/Overview/1.png"
+                            },
+                            {
+                                name: "Wade Warren",
+                                comment: "Taint stood out to me because of their communication and transparency. I always knew where I stood, what the next steps were, and what they were looking for. More importantly, I felt like they truly wanted a two-way dialogue—not just to assess.",
+                                pic: "/images/Pages/Company/Overview/2.png"
+                            },
+                            {
+                                name: "Ronald Richards",
+                                comment: "I’ve always believed that the best companies are the ones that make you feel seen, even before you join them. That was exactly my experience with Taint. The interview wasn’t just about evaluating me—it was about helping me evaluate them, too. ",
+                                pic: "/images/Pages/Company/Overview/3.png"
+                            },
+                        ].map((item, index) => (
+                            <div key={index} className="bg-white p-4 rounded shadow">
+                                <div className="flex justify-between">
+                                    <div className="flex gap-4">
+                                        <img className="size-7 mt-1" src="/images/Pages/Company/Overview/image.png" alt="" />
+                                        <div className="flex gap-2 items-center">
+                                            <img src={item.pic} className="size-10 bg-gray-300 rounded-full" />
+                                            <div className="leading-0.5">
+                                                <h3 className="text-lg font-medium">{item.name}</h3>
+                                                <span className="text-xs text-neutral-400">Job Seeker</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="flex">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="fill-amber-400 size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                        </svg>
+                                        <span className="text-xs">4.5</span>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
-                    </section>
-
-                    {/* 🔹 Overview */}
-                    <section ref={overviewRef} className="mb-16">
-                        <h2 className="text-2xl font-bold mb-4">Overview</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            {[
-                                { name: "Leslie Alexander", comment: "BMW is a great place to work with a lot of opportunities." },
-                                { name: "Wade Warren", comment: "The company culture is very supportive and inclusive." },
-                                { name: "Ronald Richards", comment: "I enjoy the challenges and the team spirit here." },
-                            ].map((item, index) => (
-                                <div key={index} className="bg-white p-4 rounded shadow">
-                                    <div className="w-16 h-16 mb-2 bg-gray-300 rounded-full" />
-                                    <h3 className="font-semibold">{item.name}</h3>
-                                    <p className="text-sm text-gray-600 mt-2">{item.comment}</p>
-                                    <div className="mt-2 text-yellow-400">⭐ 4.5</div>
+                                <p className=" mt-2">{item.comment}</p>
+                                <div className="flex gap-6 mt-3">
+                                    <div className="flex gap-1 items-center">
+                                        <button className="" onClick={() => { setPlas(plas + 1); setOfplas(true); }} disabled={ofplas} >
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z" />
+                                            </svg>
+                                        </button>
+                                        <span className="">{plas}</span>
+                                    </div>
+                                    <span className="block w-[1px] bg-black"></span>
+                                    <div className="flex gap-1 items-center">
+                                        <button className="" onClick={() => { setMines(mines + 1); setOfmines(true); }} disabled={ofmines} >
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M7.498 15.25H4.372c-1.026 0-1.945-.694-2.054-1.715a12.137 12.137 0 0 1-.068-1.285c0-2.848.992-5.464 2.649-7.521C5.287 4.247 5.886 4 6.504 4h4.016a4.5 4.5 0 0 1 1.423.23l3.114 1.04a4.5 4.5 0 0 0 1.423.23h1.294M7.498 15.25c.618 0 .991.724.725 1.282A7.471 7.471 0 0 0 7.5 19.75 2.25 2.25 0 0 0 9.75 22a.75.75 0 0 0 .75-.75v-.633c0-.573.11-1.14.322-1.672.304-.76.93-1.33 1.653-1.715a9.04 9.04 0 0 0 2.86-2.4c.498-.634 1.226-1.08 2.032-1.08h.384m-10.253 1.5H9.7m8.075-9.75c.01.05.027.1.05.148.593 1.2.925 2.55.925 3.977 0 1.487-.36 2.89-.999 4.125m.023-8.25c-.076-.365.183-.75.575-.75h.908c.889 0 1.713.518 1.972 1.368.339 1.11.521 2.287.521 3.507 0 1.553-.295 3.036-.831 4.398-.306.774-1.086 1.227-1.918 1.227h-1.053c-.472 0-.745-.556-.5-.96a8.95 8.95 0 0 0 .303-.54" />
+                                            </svg>
+                                        </button>
+                                        <span className="">{mines}</span>
+                                    </div>
                                 </div>
-                            ))}
-                        </div>
-                    </section>
 
-                    {/* 🔹 Jobs From BMW */}
-                    <section ref={jobsRef} className="mb-16">
-                        <h2 className="text-2xl font-bold mb-4">Jobs From BMW</h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                            {[
-                                "QA Engineer",
-                                "Front-end Developer",
-                                "UI/UX Designer",
-                                "Creative Director",
-                                "Copywriter",
-                                "Credit Officer",
-                                "Software Engineer",
-                            ].map((job, index) => (
-                                <div key={index} className="bg-white p-4 rounded shadow">
-                                    <div className="text-lg font-semibold mb-2">{job}</div>
-                                    <p className="text-sm text-gray-500">Location: Canada</p>
-                                    <p className="text-sm text-gray-500">Salary: 25,955 / Month</p>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="mt-4 text-right">
-                            <a href="#" className="text-blue-600 hover:underline">See all jobs</a>
-                        </div>
-                    </section>
-                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/*  Jobs From BMW */}
+                <JobsBMW/>
             </main>
 
-            <Footer/>
+            <Footer />
 
         </>
     )
