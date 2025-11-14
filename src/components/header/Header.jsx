@@ -8,7 +8,7 @@ export default function Header() {
             <header className="bg-[#EFF5FF] h-screen pt-12 px-26">
                 {/* <!-- header_top --> */}
                 <section
-                    className="container flex items-center justify-between border border-neutral-400 rounded-lg bg-white relative z-50 mt-0">
+                    className="flex items-center justify-between border border-neutral-400 rounded-lg bg-white relative z-50 mt-0 p-4">
                     <img src="/images/Logo_joblin.svg" alt="logo-joblin" />
                     <Navbar/>
                     <div className="flex items-center gap-5">
@@ -39,7 +39,7 @@ export default function Header() {
                     </div>
                 </section>
                 {/* <!-- header_content --> */}
-                <section className="container grid grid-cols-2 mt-0">
+                <section className="grid grid-cols-2 mt-0">
                     {/* <!-- header_content-left --> */}
                     <div className="space-y-8">
                         <h2 className="mt-[136px] text-7xl font-extrabold max-w-xl">Your Future Starts with <span

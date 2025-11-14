@@ -58,7 +58,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="container h-16 bg-neutral-200 xl:px-26 mt-0 flex justify-between items-center">
+                <div className="h-16 bg-neutral-200 xl:px-26 mt-0 flex justify-between items-center">
                     <div className="flex gap-1 text-xs">
                         <span className="hover:text-blue-700 transition-colors cursor-pointer ">AmirMohammad MohammadAbadi</span>
                         <img src="/images/footer/footer_bottom/C.svg" alt="" />
