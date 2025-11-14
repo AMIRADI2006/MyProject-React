@@ -114,17 +114,22 @@ export default function Company() {
             </header >
             <main>
                 {/*  Navigation Buttons */}
-                <div className="flex flex-wrap mb-8 mt-12 text-xl border-b-[1px] border-b-neutral-300 mx-26">
-                    <button onClick={() => scrollTo(infoRef)} className="px-6 py-2 hover:text-blue-500 transition hover:border-b-[1px] cursor-pointer">
+                <div className="flex mb-8 mt-12 text-xl border-b-[1px] border-b-neutral-300 mx-26  max-lg:mx-16
+                max-sm:text-sm max-sm:flex-wrap max-sm:mx-6 max-sm:border-none max-sm:gap-2 max-md:mx-0 max-lg:text-base  ">
+                    <button onClick={() => scrollTo(infoRef)} className="px-6 py-2 hover:text-blue-500 transition hover:border-b-[1px] cursor-pointer
+                    max-sm:px-2 max-sm:border max-sm:border-neutral-300 max-sm:rounded max-sm:hover:border-blue-500">
                         About Company
                     </button>
-                    <button onClick={() => scrollTo(peopleRef)} className="px-6 py-2 hover:text-blue-500 transition hover:border-b-[1px] cursor-pointer">
+                    <button onClick={() => scrollTo(peopleRef)} className="px-6 py-2 hover:text-blue-500 transition hover:border-b-[1px] cursor-pointer
+                    max-sm:px-2 max-sm:border max-sm:border-neutral-300 max-sm:rounded max-sm:hover:border-blue-500">
                         People at BMW
                     </button>
-                    <button onClick={() => scrollTo(overviewRef)} className="px-6 py-2 hover:text-blue-500 transition hover:border-b-[1px] cursor-pointer">
+                    <button onClick={() => scrollTo(overviewRef)} className="px-6 py-2 hover:text-blue-500 transition hover:border-b-[1px] cursor-pointer
+                    max-sm:px-2 max-sm:border max-sm:border-neutral-300 max-sm:rounded max-sm:hover:border-blue-500">
                         Overview
                     </button>
-                    <button onClick={() => scrollTo(jobsRef)} className="px-6 py-2 hover:text-blue-500 transition hover:border-b-[1px] cursor-pointer">
+                    <button onClick={() => scrollTo(jobsRef)} className="px-6 py-2 hover:text-blue-500 transition hover:border-b-[1px] cursor-pointer
+                    max-sm:px-2 max-sm:border max-sm:border-neutral-300 max-sm:rounded max-sm:hover:border-blue-500">
                         Jobs From BMW
                     </button>
                 </div>
@@ -240,7 +245,10 @@ export default function Company() {
                 </section>
 
                 {/*  Jobs From BMW */}
-                <JobsBMW />
+                <section ref={jobsRef} className=" mt-[88px] px-26 
+                max-sm:px-6  max-md:px-12  max-lg:px-16">
+                    <JobsBMW />
+                </section>
             </main>
 
             <Footer />

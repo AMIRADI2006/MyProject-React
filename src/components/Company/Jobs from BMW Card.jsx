@@ -2,10 +2,10 @@ export default function JobsfromBMWCard({ bmw }) {
     return (
         <>
             <div className="flex gap-4 text-left border border-neutral-200 rounded-lg p-4 cursor-pointer">
-                <img className="w-16 h-16" src={bmw.logo} alt="" />
+                <img className="w-16 h-16" src='/images/Pages/Company/Logo_BMW.png' alt="" />
                 <div className="w-[100%] space-y-3">
-                    <span className="text-neutral-500">{bmw.company}</span>
-                    <h5 className="">President of Sales</h5>
+                    <span className="text-neutral-500">BMW</span>
+                    <h5 className="text-lg font-medium">{bmw.titel}</h5>
                     <div className="text-blue-600 text-[12px] space-x-2">
                         <a className="px-2 py-1 bg-blue-50 rounded-sm" href="#">{bmw.type}</a>
                         <a className="px-2 py-1 bg-blue-50 rounded-sm" href="#">Remote</a>
