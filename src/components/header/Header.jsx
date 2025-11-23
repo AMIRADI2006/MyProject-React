@@ -10,7 +10,7 @@ export default function Header() {
                 <section
                     className="flex items-center justify-between border border-neutral-400 rounded-lg bg-white relative z-50 mt-0 p-4">
                     <img src="/images/Logo_joblin.svg" alt="logo-joblin" />
-                    <Navbar/>
+                    <Navbar />
                     <div className="flex items-center gap-5">
                         <div className="flex gap-7">
                             <svg className="size-6 cursor-pointer hover:text-blue-500 transition-colors"
@@ -35,7 +35,8 @@ export default function Header() {
                                 stroke="currentColor" className="size-6 mr-2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
-                            </svg>Sign Up</a>
+                            </svg>Sign Up
+                        </a>
                     </div>
                 </section>
                 {/* <!-- header_content --> */}
