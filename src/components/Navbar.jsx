@@ -6,8 +6,8 @@ export default function Navbar() {
     
     return (
         <>
-            <nav className="">
-                <ul className="flex gap-10">
+            <nav className="max-lg:hidden   ">
+                <ul className="flex gap-10 max-xl:gap-5">
                     <li className="hover:text-blue-600 transition-colors duration-150 cursor-pointer">
                         <NavLink to={'/'} className={({ isActive }) => isActive ? "text-blue-600 font-medium" : ""}
                         >Home</NavLink>

@@ -1,10 +1,13 @@
 import { useRef, useState } from "react";
 import Navbar from '../components/Navbar';
+import NavbarHamber from '../components/NavbarHamber';
 import Footer from '../components/Footer'
 import NewestJobs from "../components/main/Newest Jobs/Newest Jobs";
 import JobsBMW from "../components/Company/Jobs from BMW";
 
 export default function Company() {
+    const [hamber, setHamber] = useState(false);
+
     //دکمه ذخیره
     const [btnSave, setBtnSave] = useState(false);
     //دکمه نمایش بیشتر که در حالت موبایل دیده می شه
@@ -14,7 +17,7 @@ export default function Company() {
     const [plas, setPlas] = useState(5);
     //برای اینکه فقط یک بار کلیک بشه
     const [offplas, setOfplas] = useState(false); // Plas وضعیت دکمه
-    
+
     //مثل بالایه
     const [mines, setMines] = useState(0);
     const [offmines, setOfmines] = useState(false); // Mines وضعیت دکمه
@@ -33,11 +36,13 @@ export default function Company() {
             <header>
                 {/* <!-- header_top --> */}
                 <section
-                    className="flex items-center justify-between border border-neutral-400 rounded-lg bg-white relative z-50 p-4 mt-12 mx-26">
+                    className="flex items-center justify-between border border-neutral-400 rounded-lg bg-white relative z-50 p-4 mt-12 mx-26
+                    max-sm:mx-6  max-md:mx-12  max-lg:mx-16">
                     <img src="/images/Logo_joblin.svg" alt="logo-joblin" />
                     <Navbar />
                     <div className="flex items-center gap-5">
-                        <div className="flex gap-7">
+                        <div className="flex gap-7  
+                        max-sm:     max-md:        max-lg:hidden        max-xl:gap-2    ">
                             <svg className="size-6 cursor-pointer hover:text-blue-500 transition-colors"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path fill-rule="evenodd"
@@ -62,20 +67,29 @@ export default function Company() {
                                     d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
                             </svg>Sign Up</a>
                     </div>
+                    <button onClick={() => setHamber(!hamber)} className="hidden  max-lg:block">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-8 cursor-pointer hidden   max-lg:block">
+                            <path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
                 </section>
+                <div className={`absolute -left-[200px] top-0  ${hamber ? "block left-[0px] transition-all" : "transition-all"}`}>
+                    <NavbarHamber />
+                </div>
+
                 {/* <!-- header_content --> */}
                 <section className="flex flex-col items-center">
                     <div className='mt-20'>
-                        <img className='mx-auto rounded-2xl' src="/images/Pages/Company/Header_baner.png" alt="baner" />
+                        <img className='mx-auto rounded-2xl max-sm:hidden' src="/images/Pages/Company/Header_baner.png" alt="baner" />
                     </div>
                     {/* header_content-BMW */}
-                    <div className='relative w-fit flex bg-white border border-neutral-200 rounded-lg gap-[60px] py-[43px] px-[54px] mx-auto -mt-[80px] z-20
-                    max-sm:mx-6  max-md:mx-12  max-lg:mx-16 max-lg:py-6 max-lg:px-7 '>
-                        <img src="/images/Pages/Company/Logo_BMW.png" alt="BMW" className="h-fit my-auto"/>
+                    <div className='flex relative w-fit bg-white border border-neutral-200 rounded-lg gap-[60px] py-[43px] px-[54px] mx-auto -mt-[80px] z-20
+                    max-sm:mx-6 max-sm:mt-0 max-sm:flex-col  max-md:mx-12  max-lg:mx-16 max-lg:py-6 max-lg:px-7 '>
+                        <img src="/images/Pages/Company/Logo_BMW.png" alt="BMW" className="h-fit my-auto max-sm:size-[80%] max-sm:mx-auto" />
                         <div className='grid grid-rows-2'>
                             <div className='flex justify-between'>
                                 <div>
-                                    <h2 className="text-[32px] font-bold">BMW</h2>
+                                    <h2 className="text-[32px] font-bold -mt-2.5">BMW</h2>
                                     <a href="https://www.bmw.com/en/index.html" className="flex items-center gap-1 text-blue-600 cursor-pointer text-xs">
                                         <svg className="size-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
@@ -98,7 +112,7 @@ export default function Company() {
                                 </div>
                             </div>
                             <div className='grid grid-cols-4 justify-between items-center gap-x-12.5 space-y-5
-                            sm:     max-md:     max-lg:grid-cols-2 max-lg:gap-x-36     xl:     2xl:        '>
+                            max-sm:min-w-60     max-md:gap-6     max-lg:grid-cols-2 max-lg:gap-x-36     xl:     2xl:        '>
                                 <div>
                                     <h5 className="text-sm text-neutral-600">Location</h5>
                                     <span className="text-neutral-700">Germany</span>
@@ -115,7 +129,7 @@ export default function Company() {
                                 </div>
                                 {/* <div className='w-[1px] h-[55px] bg-neutral-200'></div> */}
                                 <div>
-                                    <h5 className="text-sm text-neutral-600">Phone</h5>
+                                    <h5 className="text-sm text-neutral-600 -mt-5">Phone</h5>
                                     <span className="text-neutral-700">+1 98482346</span>
                                 </div>
                             </div>
