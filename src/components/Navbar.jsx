@@ -20,7 +20,7 @@ export default function Navbar() {
                         >Company</NavLink>
                     </li>
                     <li className="hover:text-blue-600 transition-colors duration-150 cursor-pointer">
-                        <NavLink to={''}>Create CV</NavLink>
+                        <NavLink to={'/resume'}>Create CV</NavLink>
                     </li>
                 </ul>
             </nav>
