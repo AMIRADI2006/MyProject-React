@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
 
-export default function Sidebar() {
+export default function LSidebar() {
   return (
-    <aside className="hidden lg:flex flex-col w-72 bg-white border-gray-200 rounded-2xl h-screen mt-8 ml-6 p-6 gap-6 shadow-sm">
+    <aside className="hidden lg:flex flex-col w-72 h-screen bg-white border-gray-200 rounded-2xl p-6 gap-6 shadow-sm">
 
       {/* Logo */}
       <div className="flex justify-center items-center gap-3">
