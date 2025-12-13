@@ -6,7 +6,7 @@ export default function LSidebar() {
 
       {/* Logo */}
       <div className="flex justify-center items-center gap-3">
-        <img className="size-12" src="./images/Pages/resume/logo.png" alt="" />
+        <img className="size-12" src="../images/Pages/resume/logo.png" alt="" />
         <div>
           <div className="font-semibold">Joblin</div>
           <div className="text-xs text-gray-400">Dashboard</div>
@@ -19,7 +19,7 @@ export default function LSidebar() {
         <ul className="space-y-2">
 
           {/* BackHome */}
-          <NavLink to={'/'}>
+          <NavLink to={'/'} >
             <li className="flex items-center gap-3 p-2 rounded-md hover:bg-gray-50 cursor-pointer">
               <span className="w-6 text-gray-500">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -40,27 +40,32 @@ export default function LSidebar() {
           </li>
 
           {/* My Profile */}
-          <li className="flex items-center gap-3 p-2 rounded-md bg-gray-100 font-medium cursor-pointer">
-            <span className="w-6 text-gray-500">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.5 20.25a8.25 8.25 0 0 1 15 0" />
-              </svg>
-            </span>
-            <span className="text-sm">My Profile</span>
+          <li className="">
+            <NavLink to={'/resume'} className={({ isActive }) => `flex items-center gap-3 p-2 rounded-md font-medium cursor-pointer
+            ${isActive ? "bg-gray-100" : ""}`}>
+              <span className="w-6 text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.5 20.25a8.25 8.25 0 0 1 15 0" />
+                </svg>
+              </span>
+              <span className="text-sm">My Profile</span>
+            </NavLink>
           </li>
 
           {/* Notifications */}
-          <li className="flex items-center gap-3 p-2 rounded-md hover:bg-gray-50 cursor-pointer">
-            <span className="w-6 text-gray-500">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 18.75a2.25 2.25 0 1 1-4.5 0h4.5Z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 8.25a5.25 5.25 0 1 1 10.5 0c0 1.273.402 2.324 1.034 3.24.486.698.716 1.367.716 2.01V15a1.5 1.5 0 0 1-1.5 1.5H6a1.5 1.5 0 0 1-1.5-1.5v-1.5c0-.643.23-1.312.716-2.01A5.215 5.215 0 0 0 6.75 8.25Z" />
-              </svg>
-            </span>
-            <span className="text-sm">Notification</span>
-            <span className="ml-auto text-xs text-white bg-red-500 px-2 py-0.5 rounded-full">6</span>
+          <li className="">
+            <NavLink to={'/notification'} className={({ isActive }) => `flex items-center gap-3 p-2 rounded-md font-medium cursor-pointer
+            ${isActive ? "bg-gray-100" : ""}`}>
+              <span className="w-6 text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 18.75a2.25 2.25 0 1 1-4.5 0h4.5Z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 8.25a5.25 5.25 0 1 1 10.5 0c0 1.273.402 2.324 1.034 3.24.486.698.716 1.367.716 2.01V15a1.5 1.5 0 0 1-1.5 1.5H6a1.5 1.5 0 0 1-1.5-1.5v-1.5c0-.643.23-1.312.716-2.01A5.215 5.215 0 0 0 6.75 8.25Z" />
+                </svg>
+              </span>
+              <span className="text-sm">Notification</span>
+              <span className="ml-auto text-xs text-white bg-red-500 px-2 py-0.5 rounded-full">6</span>
+            </NavLink>
           </li>
-
           {/* Message */}
           <li className="flex items-center gap-3 p-2 rounded-md hover:bg-gray-50 cursor-pointer">
             <span className="w-6 text-gray-500">
