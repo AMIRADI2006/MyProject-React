@@ -55,7 +55,7 @@ export default function RSidebar() {
                             <div className="text-sm">QR</div>
                         </div>
 
-                        <p className="text-blue-600 mt-3 break-words text-sm cursor-pointer">Joblin.com/u/LF-8752332</p>
+                        <p className="text-blue-600 mt-3 wrap-break-word text-sm cursor-pointer">Joblin.com/u/LF-8752332</p>
 
                         <button className="w-full mt-3 py-2 border rounded-md cursor-pointer hover:bg-neutral-100">Copy link</button>
 

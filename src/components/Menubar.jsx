@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
 
-export default function NavbarHamber() {
+export default function Menubar() {
 
     
     return (

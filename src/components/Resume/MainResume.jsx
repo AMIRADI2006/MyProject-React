@@ -44,7 +44,7 @@ export default function MainResume() {
 
     return (
         <>
-            <ProfileCard />
+            <ProfileCard data={personalInfo}/>
 
             {!isEditingPersonal && (
                 <PersonalInfoView 

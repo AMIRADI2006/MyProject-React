@@ -1,9 +1,8 @@
 import { useRef, useState } from "react";
 import Navbar from '../components/Navbar';
-import NavbarHamber from '../components/NavbarHamber';
 import Footer from '../components/Footer'
-import NewestJobs from "../components/main/Newest Jobs/Newest Jobs";
 import JobsBMW from "../components/Company/Jobs from BMW";
+import Menubar from "../components/Menubar";
 
 export default function Company() {
     const [hamber, setHamber] = useState(false);
@@ -73,8 +72,8 @@ export default function Company() {
                         </svg>
                     </button>
                 </section>
-                <div className={`absolute -left-[200px] top-0  ${hamber ? "block left-[0px] transition-all" : "transition-all"}`}>
-                    <NavbarHamber />
+                <div className={`absolute -left-[200px] top-0  ${hamber ? "block left-0 transition-all" : "transition-all"}`}>
+                    <Menubar />
                 </div>
 
                 {/* <!-- header_content --> */}
@@ -83,7 +82,7 @@ export default function Company() {
                         <img className='mx-auto rounded-2xl max-sm:hidden' src="/images/Pages/Company/Header_baner.png" alt="baner" />
                     </div>
                     {/* header_content-BMW */}
-                    <div className='flex relative w-fit bg-white border border-neutral-200 rounded-lg gap-[60px] py-[43px] px-[54px] mx-auto -mt-[80px] z-20
+                    <div className='flex relative w-fit bg-white border border-neutral-200 rounded-lg gap-[60px] py-[43px] px-[54px] mx-auto -mt-20 z-20
                     max-sm:mx-6 max-sm:mt-0 max-sm:flex-col  max-md:mx-12  max-lg:mx-16 max-lg:py-6 max-lg:px-7 '>
                         <img src="/images/Pages/Company/Logo_BMW.png" alt="BMW" className="h-fit my-auto max-sm:size-[80%] max-sm:mx-auto" />
                         <div className='grid grid-rows-2'>
@@ -254,7 +253,7 @@ export default function Company() {
                                         </button>
                                         <span className="">{plas}</span>
                                     </div>
-                                    <span className="block w-[1px] bg-black"></span>
+                                    <span className="block w-px bg-black"></span>
                                     <div className="flex gap-1 items-center">
                                         <button className="cursor-pointer" onClick={() => { setMines(mines + 1); setOfmines(true); }} disabled={offmines} >
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
