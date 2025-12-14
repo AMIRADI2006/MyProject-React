@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import LSidebar from "../components/Resume/L Sidebar";
-import RSidebar from "../components/Resume/R Sidebar";
-import MainResume from "../components/Resume/MainResume";
+import LSidebar from "../components/Resume/View/L Sidebar";
+import RSidebar from "../components/Resume/View/R Sidebar";
+import MainResume from "../components/Resume/View/MainResume";
 import api from "../api/axios";
 
 

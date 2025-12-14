@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import LSidebar from "../components/Resume/L Sidebar";
-import RSidebar from "../components/Resume/R Sidebar";
+import LSidebar from "../components/Resume/View/L Sidebar";
+import RSidebar from "../components/Resume/View/R Sidebar";
 import api from "../api/axios";
 import { NavLink } from "react-router-dom";
 

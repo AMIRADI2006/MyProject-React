@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import ProfileCard from "./Profile Card";
-import PersonalInfoEdit from "./Edite/Personal InfoEdit";
-import PersonalInfoView from "./View/Personal InfoView";
-import TestResume from "./View/TestResume";
+import PersonalInfoEdit from "../Edite/Personal InfoEdit";
+import PersonalInfoView from "./Personal InfoView";
+import TestResume from "./TestResume";
 
-import api from "../../api/axios"; // مهم
+import api from "../../../api/axios"; // مهم
 
 export default function MainResume() {
 
