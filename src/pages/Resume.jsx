@@ -11,23 +11,29 @@ export default function Resume() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // تابع async برای گرفتن داده
-    const fetchData = async () => {
+
+    async function fetchData(){
       try {
-        const response = await api.get("/v1/personal-info"); // درخواست به بک‌اند
-        setData(response.data.data); // ذخیره داده‌ها در state
+        const response = await api.get("/v1/personal-info"); 
+        setData(response.data.data); 
       }
       catch (err) {
-        setError(err.message); // ذخیره خطا
+        setError(err.message); 
       }
-    };
+    }
 
     fetchData();
-  }, []); // [] یعنی فقط یک بار اجرا می‌شود
+  }, []); 
 
 
   if (error) {
-    return <div className="p-6 text-red-500">Error: {error}</div>;
+    return (
+      <>
+        <div className="p-6 text-red-500">Error: {error}</div>;
+        <div className="p-6 text-red-500"> دیتا از سمت بک اند به درستی نمی آید</div>;
+        <div className="p-6 text-red-500">برای تلاش دوباره لطفا صفحه را رفرش کنید</div>;
+      </>
+    )
   }
 
   if (!data) {

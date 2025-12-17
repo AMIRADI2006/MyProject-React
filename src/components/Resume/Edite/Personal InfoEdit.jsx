@@ -3,9 +3,8 @@ import Input from "../../Input";
 
 export default function PersonalInfoEdit({ data, onSave }) {
 
-    // -----------------------------
-    // state فرم (مقادیر اولیه از بک‌اند)
-    // -----------------------------
+    const [errors, setErrors] = useState({});
+
     const [form, setForm] = useState({
         first_name: data.first_name,
         last_name: data.last_name,
@@ -17,26 +16,17 @@ export default function PersonalInfoEdit({ data, onSave }) {
         birth_year: data.birth_year,
     });
 
-    // -----------------------------
-    // state نگهداری خطاهای validation
-    // -----------------------------
-    const [errors, setErrors] = useState({});
-
-    // -----------------------------
-    // تغییر مقدار هر فیلد فرم
-    // + پاک کردن خطا هنگام اصلاح کاربر
-    // -----------------------------
     const handleChange = (key, value) => {
-        setForm({ ...form, [key]: value });
+
+        setForm({ ...form, [key]: value });// تغییر مقدار هر فیلد فرم
 
         if (errors[key]) {
-            setErrors({ ...errors, [key]: "" });
+
+            setErrors({ ...errors, [key]: "" });// پاک کردن خطا هنگام اصلاح کاربر
         }
     };
 
-    // -----------------------------
     // اعتبارسنجی فرم قبل از ارسال
-    // -----------------------------
     const validate = () => {
         const newErrors = {};
 
@@ -80,11 +70,9 @@ export default function PersonalInfoEdit({ data, onSave }) {
         return Object.keys(newErrors).length === 0;
     };
 
-    // -----------------------------
     // ارسال فرم (فقط اگر valid باشد)
-    // -----------------------------
     const handleSubmit = () => {
-        if (!validate()) return; // ⛔ جلوگیری از ارسال داده خراب
+        if (!validate()) return; // اگه فرم ولید نباشه چیزی ریترن نمی شه
         onSave(form);
     };
 

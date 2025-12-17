@@ -57,7 +57,7 @@ export default function PersonalInfoView({ data, onEdit }) {
                 <button
                     onClick={onEdit}
                     className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm cursor-pointer hover:bg-blue-500"
-                >
+                    >
                     Edit
                 </button>
             </div>
