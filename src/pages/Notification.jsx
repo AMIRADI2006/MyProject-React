@@ -14,7 +14,7 @@ export default function Notification() {
     const fetchData = async () => {
       try {
         const response = await api.get("/v1/personal-info"); // درخواست به بک‌اند
-        setData(response.data.data); // ذخیره داده‌ها در state
+        setData(response.data.profile); // ذخیره داده‌ها در state
       }
       catch (err) {
         setError(err.message); // ذخیره خطا

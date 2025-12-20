@@ -16,7 +16,7 @@ export default function MainResume() {
         async function fetchData() {
             try {
                 const response = await api.get('/v1/personal-info');
-                setPersonalInfo(response.data.data);
+                setPersonalInfo(response.data.profile);
             } catch (error) {
                 console.log("Error fetching personal info:", error);
             }
@@ -30,7 +30,7 @@ export default function MainResume() {
             const res = await api.put("/v1/personal-info", updatedData);
 
             // آپدیت استیت با داده‌ی جدید برگشتی از بک‌اند
-            setPersonalInfo(res.data.data);
+            setPersonalInfo(res.data.profile);
             
             // برگرد به حالت نمایش
             setIsEditingPersonal(false);

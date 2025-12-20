@@ -29,7 +29,7 @@ export default function Header() {
 
                         <a className="hover:text-blue-500 transition-colors" href="#">Employer</a>
                         <div className="w-0.5 h-7 bg-neutral-400 mr-2"></div>
-                        <a href="#"
+                        <a href="/login"
                             className="flex items-center bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-500 transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" className="size-6 mr-2">

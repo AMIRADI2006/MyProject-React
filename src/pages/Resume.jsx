@@ -15,7 +15,7 @@ export default function Resume() {
     async function fetchData(){
       try {
         const response = await api.get("/v1/personal-info"); 
-        setData(response.data.data); 
+        setData(response.data.profile); 
       }
       catch (err) {
         setError(err.message); 

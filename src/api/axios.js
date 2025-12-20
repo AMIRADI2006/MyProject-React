@@ -8,7 +8,6 @@ const api = axios.create({
   },
 });
 
-// اگر توکن داشتی اینجا ست می‌شه
 // api.interceptors.request.use((config) => {
 //   const token = localStorage.getItem("token");
 //   if (token) {
@@ -16,5 +15,12 @@ const api = axios.create({
 //   }
 //   return config;
 // });
+
+const token = localStorage.getItem("token");
+if (token) {
+  api.defaults.headers.Authorization = `Bearer ${token}`;
+}
+
+
 
 export default api;
