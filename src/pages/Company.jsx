@@ -72,7 +72,7 @@ export default function Company() {
                         </svg>
                     </button>
                 </section>
-                <div className={`absolute -left-[200px] top-0  ${hamber ? "block left-0 transition-all" : "transition-all"}`}>
+                <div className={`absolute -left-[200px] top-0  ${hamber ? "fixed left-0 transition-all z-50" : "transition-all"}`}>
                     <Menubar />
                 </div>
 
