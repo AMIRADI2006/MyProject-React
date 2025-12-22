@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import Navbar from '../Navbar';
 
 
@@ -27,16 +28,16 @@ export default function Header() {
                             </svg>
                         </div>
 
-                        <a className="hover:text-blue-500 transition-colors" href="#">Employer</a>
+                        <a className="hover:text-blue-500 transition-colors" href="/register">Employer</a>
                         <div className="w-0.5 h-7 bg-neutral-400 mr-2"></div>
-                        <a href="/login"
+                        <NavLink to={'/login'}
                             className="flex items-center bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-500 transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" className="size-6 mr-2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
                             </svg>Sign Up
-                        </a>
+                        </NavLink>
                     </div>
                 </section>
                 {/* <!-- header_content --> */}
