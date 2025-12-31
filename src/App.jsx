@@ -7,8 +7,6 @@ import Resume from './pages/Resume';
 import Notification from './pages/Notification';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import PageTest from './components/test/PageTest';
-//
 
 // import data from './data/data.js'
 
@@ -25,7 +23,6 @@ function App() {
           <Route path="/notification" element={<Notification/>} />         {/*Notification  صفحه*/}
           <Route path="/login" element={<Login/>} />         {/*Logim  صفحه*/}
           <Route path="/register" element={<Register/>} />         {/*Register  صفحه*/}
-          <Route path="/test" element={<PageTest/>} />         {/*Register  صفحه*/}
         </Routes>
       </Router>    
     </>

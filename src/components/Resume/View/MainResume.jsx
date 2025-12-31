@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import ProfileCard from "./Profile Card";
 import PersonalInfoEdit from "../Edite/Personal InfoEdit";
 import PersonalInfoView from "./Personal InfoView";
-import TestResume from "./TestResume";
+import AboutMeSection from './sections/AboutMe/AboutMeSection';
 
 import api from "../../../api/axios";
 
@@ -31,7 +31,7 @@ export default function MainResume() {
 
             // آپدیت استیت با داده‌ی جدید برگشتی از بک‌اند
             setPersonalInfo(res.data.profile);
-            
+
             // برگرد به حالت نمایش
             setIsEditingPersonal(false);
 
@@ -46,11 +46,15 @@ export default function MainResume() {
         <>
             <ProfileCard data={personalInfo} />
 
-            {!isEditingPersonal && (<PersonalInfoView data={personalInfo} onEdit={() => setIsEditingPersonal(true)}/>)}
+            {!isEditingPersonal && (<PersonalInfoView data={personalInfo} onEdit={() => setIsEditingPersonal(true)} />)}
 
-            {isEditingPersonal && (<PersonalInfoEdit data={personalInfo} onSave={handleSave}/>)}
+            {isEditingPersonal && (<PersonalInfoEdit data={personalInfo} onSave={handleSave} />)}
 
-            <TestResume />
+            <AboutMeSection
+                data={personalInfo}
+                onSave={handleSave}
+            />
+
         </>
     );
 }
