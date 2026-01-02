@@ -6,6 +6,14 @@ import AboutMeSection from './sections/AboutMe/AboutMeSection';
 
 import api from "../../../api/axios";
 
+import ProfessionalSkillsSection from './sections/Professional Skills/ProfessionalSkillsSection';
+import WorkExperienceSection from './sections/Work Experience/WorkExperienceSection';
+import EducationSection from './sections/Education/EducationSection';
+import LinksSection from './sections/Links/LinksSection';
+import LanguagesSection from './sections/Languages/LanguagesSection';
+import JobPreferencesSection from './sections/JobPreferences/JobPreferencesSection';
+import PreferredJobBenefitsSection from './sections/PreferredJobBenefits/PreferredJobBenefitsSection';
+
 export default function MainResume() {
 
     const [isEditingPersonal, setIsEditingPersonal] = useState(false);
@@ -50,10 +58,22 @@ export default function MainResume() {
 
             {isEditingPersonal && (<PersonalInfoEdit data={personalInfo} onSave={handleSave} />)}
 
-            <AboutMeSection
-                data={personalInfo}
-                onSave={handleSave}
-            />
+            <AboutMeSection data={personalInfo} onSave={handleSave} />
+
+            <ProfessionalSkillsSection data={personalInfo.skills} onSave={(skills) => updateProfile({ skills })} />
+
+
+            <WorkExperienceSection />
+
+            <EducationSection />
+
+            <LinksSection />
+
+            <LanguagesSection />
+
+            <JobPreferencesSection />
+
+            <PreferredJobBenefitsSection />
 
         </>
     );
