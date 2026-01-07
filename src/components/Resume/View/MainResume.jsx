@@ -58,9 +58,9 @@ export default function MainResume() {
 
             {isEditingPersonal && (<PersonalInfoEdit data={personalInfo} onSave={handleSave} />)}
 
-            <AboutMeSection data={personalInfo} onSave={handleSave} />
+            <AboutMeSection/>
 
-            <ProfessionalSkillsSection data={personalInfo.skills} onSave={(skills) => updateProfile({ skills })} />
+            <ProfessionalSkillsSection/>
 
 
             <WorkExperienceSection />

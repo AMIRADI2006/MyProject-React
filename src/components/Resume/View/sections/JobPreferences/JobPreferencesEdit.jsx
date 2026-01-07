@@ -75,12 +75,19 @@ export default function JobPreferencesEdit({ preferences, onSave, onCancel }) {
           <label className="block text-sm font-medium mb-2">Minimum Salary Amount</label>
           <input
             type="text"
+            inputMode="numeric"
             value={salary}
-            onChange={(e) => setSalary(e.target.value)}
+            onChange={(e) => {
+              const onlyNumbers = e.target.value
+                .replace(/[^0-9]/g, "")
+                .replace(/^0+/, "");
+              setSalary(onlyNumbers);
+            }}
             placeholder="Input"
             className="w-full rounded-lg border border-gray-300 px-4 py-2 text-sm outline-none focus:border-gray-400"
           />
           <p className="text-xs text-gray-500 mt-1">Amount is by dollar / Monthly</p>
+
         </div>
 
         {/* Acceptable Contract */}
@@ -89,19 +96,19 @@ export default function JobPreferencesEdit({ preferences, onSave, onCancel }) {
             <h4 className="text-sm font-medium mb-3">Acceptable Contract</h4>
             <div className="space-y-3">
               {["fulltime", "parttime", "remote", "internship"].map((key) => (
-                <label key={key} className="flex items-center gap-3">
+                <label key={key} className="flex items-center gap-3 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={contracts[key]}
                     onChange={(e) =>
                       setContracts({ ...contracts, [key]: e.target.checked })
                     }
-                    className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
+                    className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500 cursor-pointer"
                   />
                   <span className="text-sm text-gray-700">
                     {key === "fulltime" ? "Full-time" :
-                     key === "parttime" ? "Part-time" :
-                     key === "remote" ? "Remote" : "Internship"}
+                      key === "parttime" ? "Part-time" :
+                        key === "remote" ? "Remote" : "Internship"}
                   </span>
                 </label>
               ))}
@@ -113,19 +120,19 @@ export default function JobPreferencesEdit({ preferences, onSave, onCancel }) {
             <h4 className="text-sm font-medium mb-3">Seniority Level:</h4>
             <div className="space-y-3">
               {["entry", "specialist", "manager", "seniorManager"].map((key) => (
-                <label key={key} className="flex items-center gap-3">
+                <label key={key} className="flex items-center gap-3 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={seniority[key]}
                     onChange={(e) =>
                       setSeniority({ ...seniority, [key]: e.target.checked })
                     }
-                    className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
+                    className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500 cursor-pointer"
                   />
                   <span className="text-sm text-gray-700">
                     {key === "entry" ? "Entry-level" :
-                     key === "specialist" ? "Specialist" :
-                     key === "manager" ? "Manager" : "Senior-Manager"}
+                      key === "specialist" ? "Specialist" :
+                        key === "manager" ? "Manager" : "Senior-Manager"}
                   </span>
                 </label>
               ))}
@@ -137,7 +144,7 @@ export default function JobPreferencesEdit({ preferences, onSave, onCancel }) {
         <button
           onClick={addPreference}
           disabled={!category && !salary && !Object.values(contracts).some(v => v) && !Object.values(seniority).some(v => v)}
-          className="flex items-center gap-2 text-blue-600 font-semibold text-sm hover:text-blue-700 transition-colors disabled:opacity-50"
+          className="flex items-center gap-2 text-blue-600 font-semibold text-sm hover:text-blue-700 transition-colors disabled:opacity-50 cursor-pointer"
         >
           <span className="text-xl">+</span> Add other
         </button>
@@ -155,7 +162,7 @@ export default function JobPreferencesEdit({ preferences, onSave, onCancel }) {
                 onClick={() => removeFromList(index)}
                 className="text-gray-500 hover:text-red-600"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="size-5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="size-5 cursor-pointer">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
@@ -165,12 +172,12 @@ export default function JobPreferencesEdit({ preferences, onSave, onCancel }) {
       )}
 
       <div className="flex justify-end gap-3 mt-6">
-        <button onClick={onCancel} className="text-gray-600 hover:text-gray-800 text-sm px-4 py-2">
+        <button onClick={onCancel} className="text-gray-600 hover:text-gray-800 text-sm px-4 py-2 cursor-pointer">
           Cancel
         </button>
         <button
           onClick={() => onSave(list)}
-          className="bg-blue-600 text-white px-6 py-2 rounded-lg text-sm hover:bg-blue-500"
+          className="bg-blue-600 text-white px-6 py-2 rounded-lg text-sm hover:bg-blue-500 cursor-pointer"
         >
           Save
         </button>

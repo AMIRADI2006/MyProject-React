@@ -1,22 +1,72 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import api from "../../../../../api/axios";
+
 import ProfessionalSkillsEmpty from "./ProfessionalSkillsEmpty";
 import ProfessionalSkillsEdit from "./ProfessionalSkillsEdit";
 import ProfessionalSkillsView from "./ProfessionalSkillsView";
 
 export default function ProfessionalSkillsSection() {
   const [isEditing, setIsEditing] = useState(false);
-  const [skills, setSkills] = useState([]); 
-  
+  const [skills, setSkills] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchSkills() {
+      try {
+        const res = await api.get("/v1/professional-skills");
+        setSkills(res.data?.skills || []);
+      } catch (e) {
+        console.log(e);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchSkills();
+  }, []);
+
+  const handleSave = async (newSkills) => {
+    try {
+      const res = await api.post("/v1/professional-skills", {
+        skills: newSkills,
+      });
+
+      setSkills(res.data.skills);
+      setIsEditing(false);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  // 🔥 حذف تکی
+  const handleRemoveOne = async (skill) => {
+    try {
+      const res = await api.delete(`/v1/professional-skills/${skill}`);
+      setSkills(res.data.skills);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  // 🔥 حذف کامل
+  const handleRemoveAll = async () => {
+    try {
+      await api.delete("/v1/professional-skills");
+      setSkills([]);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  if (loading) return null;
+
   return (
     <section className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-      <h3 className="font-semibold mb-4 flex items-center gap-2">
-        <span>
+      <h3 className="flex items-center gap-2 font-semibold mb-4">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M16.712 4.33a9.027 9.027 0 0 1 1.652 1.306c.51.51.944 1.064 1.306 1.652M16.712 4.33l-3.448 4.138m3.448-4.138a9.014 9.014 0 0 0-9.424 0M19.67 7.288l-4.138 3.448m4.138-3.448a9.014 9.014 0 0 1 0 9.424m-4.138-5.976a3.736 3.736 0 0 0-.88-1.388 3.737 3.737 0 0 0-1.388-.88m2.268 2.268a3.765 3.765 0 0 1 0 2.528m-2.268-4.796a3.765 3.765 0 0 0-2.528 0m4.796 4.796c-.181.506-.475.982-.88 1.388a3.736 3.736 0 0 1-1.388.88m2.268-2.268 4.138 3.448m0 0a9.027 9.027 0 0 1-1.306 1.652c-.51.51-1.064.944-1.652 1.306m0 0-3.448-4.138m3.448 4.138a9.014 9.014 0 0 1-9.424 0m5.976-4.138a3.765 3.765 0 0 1-2.528 0m0 0a3.736 3.736 0 0 1-1.388-.88 3.737 3.737 0 0 1-.88-1.388m2.268 2.268L7.288 19.67m0 0a9.024 9.024 0 0 1-1.652-1.306 9.027 9.027 0 0 1-1.306-1.652m0 0 4.138-3.448M4.33 16.712a9.014 9.014 0 0 1 0-9.424m4.138 5.976a3.765 3.765 0 0 1 0-2.528m0 0c.181-.506.475-.982.88-1.388a3.736 3.736 0 0 1 1.388-.88m-2.268 2.268L4.33 7.288m6.406 1.18L7.288 4.33m0 0a9.024 9.024 0 0 0-1.652 1.306A9.025 9.025 0 0 0 4.33 7.288" />
           </svg>
-        </span>
-        Professional Skills
-      </h3>
+          Professional Skills</h3>
 
       {!skills.length && !isEditing && (
         <ProfessionalSkillsEmpty onAdd={() => setIsEditing(true)} />
@@ -25,20 +75,17 @@ export default function ProfessionalSkillsSection() {
       {isEditing && (
         <ProfessionalSkillsEdit
           skills={skills}
-          onSave={(newSkills) => {
-            setSkills(newSkills);
-            setIsEditing(false);
-          }}
+          onSave={handleSave}
           onCancel={() => setIsEditing(false)}
         />
       )}
-
 
       {skills.length > 0 && !isEditing && (
         <ProfessionalSkillsView
           skills={skills}
           onEdit={() => setIsEditing(true)}
-          onRemove={(skillToRemove) => setSkills(skills.filter(s => s !== skillToRemove))}
+          onRemove={handleRemoveOne}
+          onRemoveAll={handleRemoveAll}
         />
       )}
     </section>

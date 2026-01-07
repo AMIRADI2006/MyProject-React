@@ -19,7 +19,7 @@ export default function PreferredJobBenefitsView({ benefits, onEdit, onRemove })
             {benefit}
             <button
               onClick={() => onRemove(benefit)}
-              className="text-gray-500 hover:text-gray-700"
+              className="text-gray-500 hover:text-red-600 hover:scale-130 transition-all ml-1 cursor-pointer"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="size-4">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />

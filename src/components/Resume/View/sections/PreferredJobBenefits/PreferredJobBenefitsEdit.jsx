@@ -33,7 +33,7 @@ export default function PreferredJobBenefitsEdit({ selectedBenefits, onSave, onC
               type="checkbox"
               checked={selected.includes(benefit)}
               onChange={() => toggleBenefit(benefit)}
-              className="w-5 h-5 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
+              className="w-5 h-5 text-blue-600 rounded border-gray-300 focus:ring-blue-500 cursor-pointer"
             />
             <span className="text-sm text-gray-700">{benefit}</span>
           </label>
@@ -53,7 +53,7 @@ export default function PreferredJobBenefitsEdit({ selectedBenefits, onSave, onC
                 {benefit}
                 <button
                   onClick={() => toggleBenefit(benefit)}
-                  className="text-gray-500 hover:text-red-600"
+                  className="text-gray-500 hover:text-red-600text-gray-400 hover:text-red-600 font-bold cursor-pointer hover:scale-150 transition-all"
                 >
                   ×
                 </button>
@@ -66,13 +66,13 @@ export default function PreferredJobBenefitsEdit({ selectedBenefits, onSave, onC
       <div className="flex justify-end gap-3">
         <button
           onClick={onCancel}
-          className="text-gray-600 hover:text-gray-800 text-sm px-4 py-2"
+          className="text-gray-600 hover:text-gray-800 text-sm px-4 py-2 cursor-pointer"
         >
           Cancel
         </button>
         <button
           onClick={() => onSave(selected)}
-          className="bg-blue-600 text-white px-6 py-2 rounded-lg text-sm hover:bg-blue-500"
+          className="bg-blue-600 text-white px-6 py-2 rounded-lg text-sm hover:bg-blue-500 cursor-pointer"
         >
           Save
         </button>
